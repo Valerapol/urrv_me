@@ -31,3 +31,4 @@ group :test do
 end
 
 gem "haml-rails", "~> 2.0"
+gem 'listen', '~> 3.3'
