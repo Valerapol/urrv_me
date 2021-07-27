@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: urrv
-  username: deploy
+  username: urrv
   password: <%= ENV['URRV_PASSWORD'] %>
