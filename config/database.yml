@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: urrv_me_production
-  username: urrv_me
-  password: <%= ENV['URRV_ME_DATABASE_PASSWORD'] %>
+  database: urrv
+  username: urrv
+  password: <%= ENV['URRV_PASSWORD'] %>
