@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome-sprockets";
+@import "font-awesome";
 body {
   background-image: asset-data-url('Platov_fon.jpg');
   background-repeat: no-repeat;

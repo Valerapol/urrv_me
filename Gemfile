@@ -31,3 +31,4 @@ end
 
 gem "haml-rails", "~> 2.0"
 gem 'listen', '~> 3.3'
+gem 'font-awesome-sass', '~> 5.15.1'
