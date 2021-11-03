@@ -5,7 +5,7 @@ ruby '2.7.2'
 
 gem 'rails', '~> 6.1.4'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
+gem "puma", ">= 5.5.1"
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
@@ -32,3 +32,5 @@ end
 gem "haml-rails", "~> 2.0"
 gem 'listen', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.15.1'
+gem 'simple_form'
+gem "actionpack", ">= 6.1.4.1"

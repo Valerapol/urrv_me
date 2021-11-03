@@ -1,0 +1,17 @@
+%h1 Listing airports
+- @airports.each do |airport|
+  .card{:style => "opacity: 0.8;"}
+    .card-body
+      = airport.description
+      %br
+      = airport.fir
+      %br
+      = airport.coordinates
+      %br
+      = airport.scenery
+      %br
+      = link_to 'Show', airport, class: 'btn btn-sm btn-success'
+      = link_to 'Edit', edit_airport_path(airport), class: 'btn btn-sm btn-warning'
+      = link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
+      %hr
+      = link_to 'New Airport', new_airport_path, class: 'btn btn-sm btn-primary'

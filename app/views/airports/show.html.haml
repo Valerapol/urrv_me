@@ -1,0 +1,40 @@
+%head
+  %script{:src => "https://api-maps.yandex.ru/2.1/?apikey=52fca74a-2783-4c93-8ac7-3be09cfa94d2&lang=ru_RU", :type => "text/javascript"}
+  :javascript
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [#{@airport.coordinates}],
+            zoom: 13,
+            type: 'yandex#hybrid'
+        });
+    }
+%p#notice= notice
+
+.card
+  .card-header
+    %p
+      %b Icao:
+      = @airport.icao
+    %p
+      %b Name:
+      = @airport.name
+  .card-body
+    %b Description:
+    = @airport.description
+  .card-footer
+    %b Fir:
+    = @airport.fir
+  .card-footer
+    %b Coordinates:
+    %a
+      = @airport.coordinates
+      #map{:style => "width: 600px; height: 400px"}
+  .card-footer
+    %b Scenery:
+    = @airport.scenery
+%br
+= link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
+\|
+= link_to 'Back', airports_path, class: 'btn btn-sm btn-danger'
+%br
