@@ -34,3 +34,6 @@ gem 'listen', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem "actionpack", ">= 6.1.4.1"
+gem "aws-sdk-s3", require: false #save images and files in production
+gem 'active_storage_validations' #validate image and file uploads
+gem 'rails-i18n'

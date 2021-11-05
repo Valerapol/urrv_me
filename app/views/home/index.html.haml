@@ -2,7 +2,7 @@
   .card-body
     .text-center
       %p
-      %h1 Привет всем!!!
+      %h1= t 'welcome'
       %p
       = image_tag 'logo.png', size: '300x300', alt: "logo"
       %p
@@ -10,5 +10,5 @@
       %a.navbar-brand{:href => "https://discord.urrv.me"}
         %h2
           .fab.fa-discord
-          Наш Discord
+          = t 'discord'
       %p

@@ -31,8 +31,8 @@
       = @airport.coordinates
       #map{:style => "width: 600px; height: 400px"}
   .card-footer
-    %b Scenery:
-    = @airport.scenery
+    %b Logo:
+    = image_tag @airport.logo, height: "200px"
 %br
 = link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
 \|

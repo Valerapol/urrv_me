@@ -3,7 +3,11 @@ class AirportsController < ApplicationController
 
   # GET /airports or /airports.json
   def index
-    @airports = Airport.all
+    if params[:set_locale]
+      redirect_to airports_url(locale: params[:set_locale])
+    else
+      @airports = Airport.all
+    end
   end
 
   # GET /airports/1 or /airports/1.json
@@ -12,6 +16,9 @@ class AirportsController < ApplicationController
 
   # GET /airports/new
   def new
+    if params[:set_locale]
+      redirect_to new_airport_url(locale: params[:set_locale])
+    end
     @airport = Airport.new
   end
 
@@ -64,6 +71,6 @@ class AirportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def airport_params
-      params.require(:airport).permit(:icao, :name, :description, :fir, :coordinates, :scenery)
+      params.require(:airport).permit(:icao, :name, :description, :fir, :coordinates, :iata, :logo)
     end
 end

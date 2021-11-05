@@ -1,7 +1,7 @@
 %h1 Editing airport
-
-= render 'form'
-
-= link_to 'Show', @airport
-\|
-= link_to 'Back', airports_path
+.card
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to 'Show', @airport, class: 'btn btn-sm btn-warning'
+    = link_to "#{t('back')}", airports_path, class: 'btn btn-sm btn-primary'

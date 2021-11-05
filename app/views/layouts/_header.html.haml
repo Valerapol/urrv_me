@@ -1,8 +1,8 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light
   .container-fluid
-    %a.navbar-brand{:href => "/"}
+    = link_to home_path, class: 'navbar-brand' do
       = image_tag 'logo.png', size: '50x50', alt: "logo", class: 'rounded'
-      ЗЦ Ростов-на-Дону VATSIM
+      = t 'logo'
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -10,9 +10,10 @@
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(airports_path)}"}
           = link_to airports_path, class: 'nav-link' do
             .fas.fa-paper-plane
-            География ЗЦ
+            = t 'geography'
         %li.nav-item
-          %a.nav-link{:href => "#"} Link
+          = link_to home_path, class: 'nav-link' do
+            = t 'pilot'
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
             Dropdown
@@ -30,3 +31,5 @@
       %form.d-flex
         %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
         %button.btn.btn-outline-success{:type => "submit"} Search
+        /%a= link_to 'English', home_path(locale: :en)
+        /%a= link_to 'Русский', home_path(locale: :ru)

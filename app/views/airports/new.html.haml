@@ -1,5 +1,6 @@
-%h1 New airport
-
-= render 'form'
-
-= link_to 'Back', airports_path
+%h1 Новый аэропорт
+.card
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to "#{t('back')}", airports_path, class: 'btn btn-sm btn-primary'

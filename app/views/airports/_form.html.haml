@@ -4,12 +4,15 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :icao
-    = f.input :name
-    = f.input :description, as: :rich_text_area
-    = f.input :fir
+    = f.input :icao, label: 'ICAO'
+    = f.input :iata, label: 'IATA'
+    = f.label 'Логотип'
+    %br
+    = f.file_field :logo
+    = f.input :name, label: 'Наименование'
+    = f.input :description, label: 'Описание', as: :rich_text_area
+    = f.input :fir, label: 'РПИ', collection: ['Ростов-на-Дону', 'Tbilisi', 'Yerevan', 'Baku']
     = f.input :coordinates, placeholder: 'Insert coordinates (format - "latitude, longitude")'
-    = f.input :scenery, placeholder: 'Insert URL'
-
+  %br
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-sm btn-success'
