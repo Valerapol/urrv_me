@@ -1,3 +1,4 @@
+@import "./actiontext.scss";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -6,15 +7,36 @@
 
 .ui-state-highlight { height: 3em; line-height: 1.2em; background-color: #cef5f5; }
 
-body {
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 100%), asset-data-url('Platov_fon.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+//sinple_form input for rich_text_area
+trix-editor.form-control {
+  height: auto;
 }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  overflow: visible;
+}
+
 
 .locale {
  float: right;
  margin: -0.25em 0.1em;
+}
+
+//footer always on the bottom
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin: 0 0 200px;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 100%), asset-data-url('urrv_fon.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }

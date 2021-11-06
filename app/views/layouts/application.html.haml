@@ -2,11 +2,12 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title UrrvMe
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %meta{descriptions: 'ЗЦ Ростов-на-Дону VATSIM'}/
     %meta{keywords: 'URRV, VATSIM, VATRUS, Ростов-на-Дону'}/
     %meta{author: 'Valeriy Polostyanoy'}/
+    %title
+      = content_for?(:title) ? yield(:title) :"URRV"
     = favicon_link_tag 'logo.png'
     = csrf_meta_tags
     = csp_meta_tag
@@ -15,9 +16,11 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/header'
-    /= render 'layouts/messages'
+    = render 'layouts/messages'
     .container-xl
       %p
       = yield
+    %br
+    %p
     %br
     = render 'layouts/footer'

@@ -8,6 +8,11 @@
     = f.input :iata, label: 'IATA'
     = f.label 'Логотип'
     %br
+    - if @airport.logo.attached?
+      = image_tag @airport.logo, width: "200px"
+      .row
+      = @airport.logo.filename
+    .row
     = f.file_field :logo
     = f.input :name, label: 'Наименование'
     = f.input :description, label: 'Описание', as: :rich_text_area

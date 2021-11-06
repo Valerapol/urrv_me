@@ -37,3 +37,5 @@ gem "actionpack", ">= 6.1.4.1"
 gem "aws-sdk-s3", require: false #save images and files in production
 gem 'active_storage_validations' #validate image and file uploads
 gem 'rails-i18n'
+gem "image_processing"
+gem 'mimemagic', '~> 0.3.10'
