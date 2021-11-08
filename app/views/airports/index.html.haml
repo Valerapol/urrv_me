@@ -1,7 +1,4 @@
-- @airports.each do |airport|
-  .card{:style => "opacity: 0.8; width: 35rem;"}
-    .card-body
-      = link_to airport do
-        = image_tag airport.logo, height: "100px"
-  %br
+.row
+  - @airports.each do |airport|
+    = render 'airports/airport', airport: airport
 = link_to 'New Airport', new_airport_path, class: 'btn btn-sm btn-primary'

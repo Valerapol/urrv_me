@@ -1,0 +1,7 @@
+- content_for :title do
+  URRV
+  \|
+  Users
+.card-columns
+  - @users.each do |user|
+    = render 'users/user', user: user
