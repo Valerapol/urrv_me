@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails urrv_me: development" uuid="6392d552-108b-4bcc-801f-e4beb69ee497">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/urrv_me_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails urrv_me: test" uuid="547f7baa-9bef-4f43-afbe-17a7ddf9d3af">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/urrv_me_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails urrv_me: production" uuid="d540e379-1f31-4a6c-bbd3-9c4c9c581d17">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/urrv</jdbc-url>
+    </data-source>
+  </component>
+</project>
