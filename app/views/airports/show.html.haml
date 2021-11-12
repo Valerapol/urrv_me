@@ -9,29 +9,31 @@
             type: 'yandex#hybrid'
         });
     }
-
-.card
-  .card-header
-    %p
-      %b Icao:
-      = @airport.icao
-    %p
-      %b Name:
-      = @airport.name
-  .card-body
-    %b Description:
-    = @airport.description
-  .card-footer
-    %b Fir:
-    = @airport.fir
-  .card-footer
-    %b Coordinates:
-    %a
-      = @airport.coordinates
-      #map{:style => "width: 600px; height: 400px"}
-  .card-footer
-    %b Logo:
+.text-center
+  = link_to @airport do
     = image_tag @airport.logo, height: "200px"
+- if I18n.locale.to_s == "en"
+  1
+- else
+  %h3.text-center
+    %br
+    = @airport.name
+  %br
+  .row.row-cols-1.g-4
+    .col-8
+      .card
+        .card-body
+          = @airport.description
+    .col-4
+      .card
+        .card-body
+          %b ICAO:
+          = @airport.icao
+          %b IATA:
+          = @airport.iata
+      %br
+      #map{:style => "width: 400px; height: 300px"}
+
 %br
 = link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
 \|

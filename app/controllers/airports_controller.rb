@@ -14,7 +14,7 @@ class AirportsController < ApplicationController
   # GET /airports/1 or /airports/1.json
   def show
     if params[:set_locale]
-      redirect_to airports_url(locale: params[:set_locale])
+      redirect_to airport_url(locale: params[:set_locale])
     end
   end
 
