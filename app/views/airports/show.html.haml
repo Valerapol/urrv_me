@@ -12,28 +12,38 @@
 .text-center
   = link_to @airport do
     = image_tag @airport.logo, height: "200px"
-- if I18n.locale.to_s == "en"
-  1
-- else
-  %h3.text-center
-    %br
-    = @airport.name
+%h3.text-center
   %br
-  .row.row-cols-1.g-4
-    .col-8
-      .card
-        .card-body
-          = @airport.description
-    .col-4
-      .card
-        .card-body
-          %b ICAO:
-          = @airport.icao
-          %b IATA:
-          = @airport.iata
-      %br
-      #map{:style => "width: 400px; height: 300px"}
-
+  = @airport.name
+%br
+.row.row-cols-1.g-4
+  .col-8
+    .card
+      .card-body
+        = @airport.description
+  .col-4
+    .card
+      .card-body
+        %b ICAO:
+        = @airport.icao
+        %b IATA:
+        = @airport.iata
+    %br
+    #map{:style => "width: 400px; height: 300px"}
+    %br
+    .card
+      .card-header
+        %b METAR:
+        %br
+        = @metar
+    %br
+    .card
+      .card-header
+        %b TAF:
+        %br
+        = @taf
+    %br
+    = render 'airports/notam'
 %br
 = link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
 \|

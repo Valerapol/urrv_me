@@ -41,3 +41,8 @@ gem "image_processing"
 gem 'mimemagic', '~> 0.3.10'
 gem 'devise'
 gem 'devise-i18n'
+gem "http"
+gem 'nokogiri'
+gem 'translit'
+gem 'friendly_id', '~> 5.4.0'
+gem 'cookie_law'

@@ -1,4 +1,5 @@
 .row
   - @airports.each do |airport|
     = render 'airports/airport_logo', airport: airport
+%br
 = link_to 'New Airport', new_airport_path, class: 'btn btn-sm btn-primary'

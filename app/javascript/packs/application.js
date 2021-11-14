@@ -18,3 +18,7 @@ require("stylesheets/application.scss")
 
 require("trix")
 require("@rails/actiontext")
+require("js.cookie")
+require("cookie_law")
+require("jquery")
+require("jquery-ui-dist/jquery-ui")
