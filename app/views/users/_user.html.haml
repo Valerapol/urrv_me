@@ -1,8 +1,39 @@
 .card
   .card-header
-    .fa.fa.user
-    = user.email
-  .card_footer
-    Signed up
+    - if user.online?
+      .text-success.fa.fa-user
+    - else
+      .text-danger.fa.fa-user
+    = link_to user.username, user_path(user)
+  .card-footer
+    Signet up
     = time_ago_in_words(user.created_at)
-    
+    ago
+  .card-footer
+    = 'sign_in_count'.humanize
+    = user.sign_in_count
+    .row
+    = 'current_sign_in_at'.humanize
+    = user.current_sign_in_at
+    .row
+    = 'last_sign_in_at'.humanize
+    = user.last_sign_in_at
+    .row
+    = 'current_sign_in_ip'.humanize
+    = user.current_sign_in_ip
+    .row
+    = 'last_sign_in_ip'.humanize
+    = user.last_sign_in_ip
+  /.card-footer
+  /  Confirmed email?
+  /  - if user.confirmed_at.present?
+  /    .badge.bg-success Yes
+  /  - else
+  /    .badge.bg-danger No
+  /.card-footer
+  /  - user.roles.each do |role|
+  /    .badge.bg-info
+  /      = role.name
+  /  - if current_user
+  /    - if policy(user).edit?
+  /      = link_to 'Edit roles', edit_user_path(user), class: 'btn btn-sm btn-warning'

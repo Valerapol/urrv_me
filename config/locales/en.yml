@@ -268,4 +268,5 @@ en:
     prompts:
       user:
         role: 'Select your role'
+  users: Users
   welcome: 'Welcome!'

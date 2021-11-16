@@ -2,6 +2,94 @@
   URRV
   \|
   Users
-.card-columns
-  - @users.each do |user|
-    = render 'users/user', user: user
+%h3
+  .text-center
+    Users
+    .badge.bg-info
+      = @users.count
+%p
+/!= pagy_bootstrap_nav(@pagy)
+/.card-columns
+/  - @users.each do |user|
+/    = render 'users/user', user: user
+
+/= search_form_for @q do |f|
+/  = f.search_field :email_or_sign_in_count_eq, placeholder: 'email or sign in count'
+/  = f.submit
+/  = link_to users_path, class: 'btn btn-sm btn-secondary' do
+/    .fa.fa-sync
+
+.card
+  /.card-header
+  .card-body
+    .table-responsive
+      %table.table.table-sm.table-bordered
+        %thead
+          %tr
+            %th
+              .text-center
+                = 'id'.humanize
+            /= sort_link(@q, :id, default_order: :desc)
+            %th
+              .text-center
+                = 'email'.humanize
+            /= sort_link(@q, :email)
+            %th
+              .text-center
+                = 'created_at'.humanize
+            /= sort_link(@q, :created_at)
+            %th
+              .text-center
+                = 'sign_in_count'.humanize
+            /= sort_link(@q, :sign_in_count)
+            %th
+              .text-center
+                = 'current_sign_in_at'.humanize
+            /= sort_link(@q, :current_sign_in_at)
+            %th
+              .text-center
+                = 'last_sign_in_at'.humanize
+            /= sort_link(@q, :last_sign_in_at)
+            %th
+              .text-center
+                = 'current_sign_in_ip'.humanize
+            /= sort_link(@q, :current_sign_in_ip)
+            %th
+              .text-center
+                = 'last_sign_in_ip'.humanize
+            /= sort_link(@q, :last_sign_in_ip)
+            %th.text-center Confirmed?
+            /%th.text-center Roles
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td= user.id
+              %td
+                = link_to user_path(user) do
+                  = user.email
+              %td= user.created_at
+              %td
+                .text-center
+                  = user.sign_in_count
+              %td= user.current_sign_in_at
+              %td= user.last_sign_in_at
+              %td= user.current_sign_in_ip
+              %td= user.last_sign_in_ip
+              %td
+                .text-center
+                  /- if user.confirmed?
+                  /  .badge.bg-success
+                  /    yes
+                  /- else
+                  /  .badge.bg-danger
+                  /    no
+              /%td
+              /  .text-center
+              /    - user.roles.each do |role|
+              /      .badge.badge-info
+              /        = role.name
+              /    - if policy(user).edit?
+              /      = link_to 'Edit roles', edit_user_path(user), class: 'btn btn-sm btn-warning'
+  /.card-footer
+  /  .text-center
+  /    != pagy_bootstrap_nav(@pagy)

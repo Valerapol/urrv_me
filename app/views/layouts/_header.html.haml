@@ -20,7 +20,9 @@
               = t 'admin'
             %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
               %li
-                %a.dropdown-item{:href => "#"} Action
+                %a.dropdown-item
+                  = link_to users_path, class: 'nav-link' do
+                    = t 'users'
               %li
                 %a.dropdown-item{:href => "#"} Another action
               %li
