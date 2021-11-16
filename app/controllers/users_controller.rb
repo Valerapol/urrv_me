@@ -4,17 +4,26 @@ class UsersController < ApplicationController
   def index
     if params[:set_locale]
       redirect_to users_url(locale: params[:set_locale])
+    else
+      @users = User.all.order(created_at: :desc)
     end
-    @users = User.all.order(created_at: :desc)
   end
 
   def show
-    @user = User.friendly.find(params[:id])
+    if params[:set_locale]
+      redirect_to user_url(locale: params[:set_locale])
+    else
+      @user = User.friendly.find(params[:id])
+    end
   end
 
   def edit
-    @user = User.friendly.find(params[:id])
-    authorize @user
+    if params[:set_locale]
+      redirect_to user_url(locale: params[:set_locale])
+    else
+      @user = User.friendly.find(params[:id])
+      authorize @user
+    end
   end
 
   def update
