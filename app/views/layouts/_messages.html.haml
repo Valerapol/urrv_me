@@ -1,5 +1,6 @@
 - flash.each do |name, msg|
   - if msg.is_a?(String)
     %div{:class => "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}", :role => "alert"}
-      = content_tag :div, msg, :id => "flash_#{name}"
-      %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "alert", :type => "button"}
+      .container-fluid.card-group
+        = content_tag :div, msg, :id => "flash_#{name}"
+        %button.position-absolute.top-50.end-0.translate-middle.btn.btn-sm.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "alert", :type => "button"}
