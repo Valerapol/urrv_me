@@ -77,12 +77,12 @@
               %td= user.last_sign_in_ip
               %td
                 .text-center
-                  /- if user.confirmed?
-                  /  .badge.bg-success
-                  /    yes
-                  /- else
-                  /  .badge.bg-danger
-                  /    no
+                  - if user.confirmed?
+                    .badge.bg-success
+                      yes
+                  - else
+                    .badge.bg-danger
+                      no
               /%td
               /  .text-center
               /    - user.roles.each do |role|
