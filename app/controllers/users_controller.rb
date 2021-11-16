@@ -22,14 +22,14 @@ class UsersController < ApplicationController
       redirect_to user_url(locale: params[:set_locale])
     else
       @user = User.friendly.find(params[:id])
-      authorize @user
+      #authorize @user
     end
   end
 
   def update
-    authorize @user
+    #authorize @user
     if @user.update(user_params)
-      redirect_to users_path, notice: "User #{@user.email} was successfully updated."
+      redirect_to users_path, notice: "#{I18n.t(:user_update)}"
     else
       render :edit
     end
@@ -39,5 +39,8 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.friendly.find(params[:id])
+  end
+  def user_params
+    params.require(:user).permit({role_ids: []})
   end
 end

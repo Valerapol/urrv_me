@@ -248,6 +248,7 @@ en:
       blank: "is blank"
       'null': "is null"
       not_null: "is not null"
+  role: Must have at least one role
   sign_in_count: Sign in count
   simple_form:
     labels:
@@ -268,5 +269,6 @@ en:
     prompts:
       user:
         role: 'Select your role'
+  user_update: "User was successfully updated."
   users: Users
   welcome: 'Welcome!'

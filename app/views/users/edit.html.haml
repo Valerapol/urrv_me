@@ -8,7 +8,10 @@
     = @user.username
   .card-body
     = simple_form_for @user do |f|
-      = f.collection_check_boxes :role_ids, Role.all, :id, :name
+      = f.collection_check_boxes :role_ids, Role.all, :id, :name do |b|
+        = b.label class: "label_checkbox" do
+          .badge.bg-light.text-dark
+            = b.check_box + " - " + b.text
       = f.error :roles, class: 'text-danger'
       %hr
       = f.button :submit, class: 'btn btn-success'

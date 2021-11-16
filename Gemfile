@@ -46,3 +46,4 @@ gem 'nokogiri'
 gem 'translit'
 gem 'friendly_id', '~> 5.4.0'
 gem 'cookie_law'
+gem "rolify"

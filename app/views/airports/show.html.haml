@@ -48,4 +48,7 @@
 = link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
 \|
 = link_to 'Back', airports_path, class: 'btn btn-sm btn-danger'
+\|
+= link_to 'Destroy', @airport, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-danger'
+
 %br
