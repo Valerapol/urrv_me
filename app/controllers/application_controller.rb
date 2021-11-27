@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
+  include Pundit
   protect_from_forgery
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   around_action :switch_locale
   before_action :authenticate_user!
   private
-  
+  def user_not_authorized #pundit
+    flash[:alert] = "#{I18n.t 'pundit.default'}"
+    redirect_to(request.referrer || home_path)
+  end
+
   def default_url_options
     {locale: I18n.locale}
   end

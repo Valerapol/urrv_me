@@ -1,5 +1,6 @@
 class Airport < ApplicationRecord
   has_rich_text :description
+  has_rich_text :description_en
   serialize :aip
   has_one_attached :logo
   validates :logo, attached: true, 

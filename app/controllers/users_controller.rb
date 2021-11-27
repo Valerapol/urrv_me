@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       redirect_to users_url(locale: params[:set_locale])
     else
       @users = User.all.order(created_at: :desc)
+      authorize @users
     end
   end
 
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
       redirect_to user_url(locale: params[:set_locale])
     else
       @user = User.friendly.find(params[:id])
+      authorize @user
     end
   end
 
@@ -22,12 +24,12 @@ class UsersController < ApplicationController
       redirect_to user_url(locale: params[:set_locale])
     else
       @user = User.friendly.find(params[:id])
-      #authorize @user
     end
+    authorize @user
   end
 
   def update
-    #authorize @user
+    authorize @user
     if @user.update(user_params)
       redirect_to users_path, notice: "#{I18n.t(:user_update)}"
     else

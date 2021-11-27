@@ -12,6 +12,9 @@ class HomeController < ApplicationController
     if params[:set_locale]
       redirect_to privacy_policy_url(locale: params[:set_locale])
     end
+    if params[:icao]
+      redirect_to "/airports?icao=#{params[:icao]}"
+    end
   end
 
 end

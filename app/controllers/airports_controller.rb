@@ -7,8 +7,7 @@ class AirportsController < ApplicationController
   def index
     if params[:set_locale]
       redirect_to airports_url(locale: params[:set_locale])
-    end
-    if params[:icao]
+    elsif params[:icao]
       @airports = Airport.where('icao ILIKE ?', "%#{params[:icao]}%")
     else
       @airports = Airport.all
@@ -18,6 +17,8 @@ class AirportsController < ApplicationController
   def show
     if params[:set_locale]
       redirect_to airport_url(locale: params[:set_locale])
+    elsif params[:icao]
+      redirect_to "/airports?icao=#{params[:icao]}"
     end
 
     #запрос metar taf
@@ -116,6 +117,7 @@ class AirportsController < ApplicationController
       redirect_to new_airport_url(locale: params[:set_locale])
     end
     @airport = Airport.new
+    authorize @airport
   end
 
   def edit
@@ -123,6 +125,7 @@ class AirportsController < ApplicationController
 
   def create
     @airport = Airport.new(airport_params)
+    authorize @airport
 
     respond_to do |format|
       if @airport.save
@@ -145,10 +148,12 @@ class AirportsController < ApplicationController
         format.json { render json: @airport.errors, status: :unprocessable_entity }
       end
     end
+    authorize @airport
   end
 
   def destroy
     @airport.destroy
+    authorize @airport
     respond_to do |format|
       format.html { redirect_to airports_url, notice: "Airport was successfully destroyed." }
       format.json { head :no_content }
@@ -161,6 +166,6 @@ class AirportsController < ApplicationController
     end
 
     def airport_params
-      params.require(:airport).permit(:icao, :name, :description, :fir, :coordinates, :iata, :logo, :class_apt)
+      params.require(:airport).permit(:icao, :name, :description, :name_en, :description_en, :fir, :coordinates, :iata, :logo, :class_apt)
     end
 end

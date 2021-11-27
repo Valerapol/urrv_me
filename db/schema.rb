@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_192819) do
+ActiveRecord::Schema.define(version: 2021_11_27_130540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2021_11_16_192819) do
     t.text "aip"
     t.string "slug"
     t.string "class_apt"
+    t.string "name_en"
+    t.text "description_en"
     t.index ["slug"], name: "index_airports_on_slug", unique: true
   end
 

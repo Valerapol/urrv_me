@@ -14,7 +14,7 @@
         %li.nav-item
           = link_to home_path, class: 'nav-link' do
             = t 'pilot'
-        - if current_user
+        - if current_user && current_user.has_role?(:admin)
           %li.nav-item.dropdown
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
               = t 'admin'
