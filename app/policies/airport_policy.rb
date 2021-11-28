@@ -9,6 +9,10 @@ class AirportPolicy < ApplicationPolicy
     @user.has_role?(:admin) || @user.has_role?(:staff) #|| @user.has_role?(:instructor) || @user.has_role?(:mentor)
   end
 
+  def create?
+    @user.has_role?(:admin) || @user.has_role?(:staff) #|| @user.has_role?(:instructor) || @user.has_role?(:mentor)
+  end
+
   def edit?
     @user.has_role?(:admin) || @user.has_role?(:staff) #|| @user.has_role?(:instructor) || @user.has_role?(:mentor)
   end
