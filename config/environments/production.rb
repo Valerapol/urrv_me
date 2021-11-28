@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { :host => 'urrv.me', :protocol => 'https' }
+  config.action_mailer.default_url_options = { :host => 'urrv-me.herokuapp.com', :protocol => 'https' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -12,16 +12,9 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name => 'urrv.me',
     :password => 'bdiohmzznyhkhcya',
-    :domain => 'urrv.me',
+    :domain => 'urrv-me.herokuapp.com',
     :enable_starttls_auto => true
   }
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-    email: {
-      deliver_with: :deliver, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
-      email_prefix: '[PREFIX] ',
-      sender_address: %{"urrv error" <urrv.me@gmail.com>},
-      exception_recipients: %w{support@urrv.me}
-    }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
