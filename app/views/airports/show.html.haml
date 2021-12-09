@@ -38,6 +38,10 @@
     #map{:style => "width: 400px; height: 300px"}
     %br
     .card
+      .card-body
+        %iframe{:frameborder => "1", :src => "https://metar-taf.com/embed/#{@airport.icao.to_s}?bg_color=f2f2f2&speed=ms&layout=landscape", :width => "380", :height => "255", :scrolling => "no"}
+    %p
+    .card
       .card-header
         %b METAR:
         %br
@@ -51,10 +55,12 @@
     %br
     = render 'airports/notam'
 %br
-= link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
-\|
-= link_to 'Back', airports_path, class: 'btn btn-sm btn-danger'
-\|
-= link_to 'Destroy', @airport, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-danger'
+- if current_user && current_user.has_role?(:admin) || current_user && current_user.has_role?(:staff)
+  = link_to 'Edit', edit_airport_path(@airport), class: 'btn btn-sm btn-success'
+  \|
+= link_to 'Back', airports_path, class: 'btn btn-sm btn-success'
+- if current_user && current_user.has_role?(:admin) || current_user && current_user.has_role?(:staff)
+  \|
+  = link_to 'Destroy', @airport, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-danger'
 
 %br

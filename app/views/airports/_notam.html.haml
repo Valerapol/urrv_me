@@ -8,7 +8,7 @@
         %h5#exampleModalLabel.modal-title NOTAM #{@airport.icao}
         %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
       .modal-body
-        /- @url_parsed.each do |str|
+        /- @url.each do |str|
         /  .card
         /    .card-body
         /      = str

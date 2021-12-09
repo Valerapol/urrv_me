@@ -60,6 +60,7 @@ en:
         action: Confirm my account
         greeting: Welcome %{recipient}!
         instruction: 'You can confirm your account email through the link below:'
+        information:
         subject: Confirmation instructions
       email_changed:
         greeting: Hello %{recipient}!
@@ -173,7 +174,7 @@ en:
       multiple_pages: "Displaying %{item_name} <b>%{from}-%{to}</b> of <b>%{count}</b> in total"
     combo_nav_js: "Page %{page_input} of %{pages}"
     items_selector_js: "Show %{items_input} %{item_name} per page"
-  pilot: For pilots
+  pilot: Training
   pundit:
     default: 'You cannot perform this action.'
     post_policy:

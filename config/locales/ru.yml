@@ -181,7 +181,7 @@ ru:
       multiple_pages: "Всего <b>%{count}</b> %{item_name}, показаны с <b>%{from}</b> по <b>%{to}</b>"
     combo_nav_js: "Страница %{page_input} из %{pages}"
     items_selector_js: "Показать %{items_input} %{item_name} на странице"
-  pilot: Для пилотов
+  pilot: УТЦ
   pundit:
     default: 'Вы не можете выполнить это действие.'
     post_policy:

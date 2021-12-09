@@ -10,7 +10,7 @@ class AirportsController < ApplicationController
     elsif params[:icao]
       @airports = Airport.where('icao ILIKE ?', "%#{params[:icao]}%")
     else
-      @airports = Airport.all
+      @airports = Airport.all.order(icao: :asc)
     end
   end
 
@@ -34,38 +34,14 @@ class AirportsController < ApplicationController
       @metar, @taf = m.reverse!, t.reverse!
     end
     #запрос notam
-    if @airport.class_apt == "Международный"
-      url_type = "http://caiga.ru/common/AirInter/series_notam/"
-    elsif @airport.class_apt == "А, Б, В"
-      url_type = "http://caiga.ru/common/AirClassABV/series_notam/"
-    else
-      url_type = "http://caiga.ru/common/AirClassGDE/to_notam_of_a_series_v/"
-      url_type2 = "http://caiga.ru/common/AirClassGDE/to_notam_of_a_series_d/"
-    end
+    url_type = "http://caiga.ru/ANI_Official/AIP_Russia/notam/notam_series/"
     doc = Nokogiri::HTML(URI.open("#{url_type}"))
     url = doc.css('.table_left_df').map do |table|
       table_url = table['onclick'].to_s
-      if @airport.class_apt == "Международный"
-        87.times do table_url.chop! end
-      elsif @airport.class_apt == "А, Б, В"
-        90.times do table_url.chop! end
-      else
-        100.times do table_url.chop! end
-      end
+      52.times do table_url.chop! end
       table_url.reverse!
       47.times do table_url.chop! end
       table_url.reverse!
-    end
-    if @airport.class_apt == "Г, Д, Е"
-      doc2 = Nokogiri::HTML(URI.open("#{url_type2}"))
-      url2 = doc2.css('.table_left_df').map do |table|
-        table_url = table['onclick'].to_s
-        100.times do table_url.chop! end
-        table_url.reverse!
-        47.times do table_url.chop! end
-        table_url.reverse!
-      end
-      url.push(url2)
     end
     url_parsed = []
     url.each do |str|

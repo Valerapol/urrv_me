@@ -2,4 +2,5 @@
   - @airports.each do |airport|
     = render 'airports/airport_logo', airport: airport
 %br
-= link_to 'New Airport', new_airport_path, class: 'btn btn-sm btn-primary'
+- if current_user && current_user.has_role?(:admin) || current_user && current_user.has_role?(:staff)
+  = link_to 'New Airport', new_airport_path, class: 'btn btn-sm btn-primary'
