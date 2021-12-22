@@ -57,6 +57,7 @@
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v4.1.0, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.9, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cookie_law (v0.1.2, RVM: ruby-2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cookies_eu (v1.7.8, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.8.0, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise-i18n (v1.10.1, RVM: ruby-2.7.2) [gem]" level="application" />
@@ -78,6 +79,7 @@
     <orderEntry type="library" scope="PROVIDED" name="image_processing (v1.12.1, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.3, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.4.0, RVM: ruby-2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="js_cookie_rails (v2.2.0, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.7.0, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="llhttp-ffi (v0.4.0, RVM: ruby-2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.12.0, RVM: ruby-2.7.2) [gem]" level="application" />

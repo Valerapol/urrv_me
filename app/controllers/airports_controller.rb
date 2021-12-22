@@ -34,7 +34,7 @@ class AirportsController < ApplicationController
       @metar, @taf = m.reverse!, t.reverse!
     end
     #запрос notam
-    url_type = "http://caiga.ru/ANI_Official/AIP_Russia/notam/notam_series/"
+    url_type = "http://caiga.ru/ANI_Official/notam/notam_series/"
     doc = Nokogiri::HTML(URI.open("#{url_type}"))
     url = doc.css('.table_left_df').map do |table|
       table_url = table['onclick'].to_s

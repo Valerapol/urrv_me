@@ -48,3 +48,4 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'cookie_law'
 gem "rolify"
 gem "pundit"
+gem 'cookies_eu'

@@ -1,15 +1,65 @@
-$(document).on('cl:not_accepted', function() {
-    // This function will be called when a user visits your page but has not accepted
-    // cookie policy. This is the right place (if needed) to use anonymous tracking/profiling system
-});
-$(document).on('cl:ready', function() {
-    // This function will be called only when the users accepts the cookie policy
-    // with one of the allowed method.
-    // Will also be called after every document.ready function if the policy has been accepted.
-    // This is the right place to trigger Google Analytics track page, for example
-});
+//= require js.cookie
+'use strict';
 
-$(document).on('cl:page_change', function() {
-    // If your application uses Turbolinks, this event will be triggered after every
-    // 'page:change' Turbolinks event
-});
+var windowIsTurbolinked = 'Turbolinks' in window;
+
+var cookiesEu = {
+    init: function() {
+        var cookiesEuOKButton = document.querySelector('.js-cookies-eu-ok');
+
+        if (cookiesEuOKButton) {
+            this.addListener(cookiesEuOKButton);
+            // clear turbolinks cache so cookie banner does not reappear
+            windowIsTurbolinked && window.Turbolinks.clearCache();
+        }
+    },
+
+    addListener: function(target) {
+        // Support for IE < 9
+        if (target.attachEvent) {
+            target.attachEvent('onclick', this.setCookie);
+        } else {
+            target.addEventListener('click', this.setCookie, false);
+        }
+    },
+
+    setCookie: function() {
+        var isSecure = location.protocol === 'https:';
+        Cookies.set('cookie_eu_consented', true, { path: '/', expires: 365, secure: isSecure });
+
+        var container = document.querySelector('.js-cookies-eu');
+        container.parentNode.removeChild(container);
+
+        document.dispatchEvent(new CustomEvent('cookies-eu-acknowledged'));
+    }
+};
+
+(function() {
+    function eventName(fallback) {
+        return windowIsTurbolinked ? 'turbolinks:load' : fallback
+    }
+
+    var isCalled = false;
+
+    function isReady() {
+        // return early when cookiesEu.init has been called AND Turbolinks is NOT included
+        // when Turbolinks is included cookiesEu.init has to be called on every page load
+        if (isCalled && !windowIsTurbolinked) {
+            return
+        }
+        isCalled = true;
+
+        cookiesEu.init();
+    }
+
+    if (document.addEventListener) {
+        return document.addEventListener(eventName('DOMContentLoaded'), isReady, false);
+    }
+
+    // Old browsers IE < 9
+    if (window.addEventListener) {
+        window.addEventListener(eventName('load'), isReady, false);
+    } else if (window.attachEvent) {
+        window.attachEvent(eventName('onload'), isReady);
+    }
+})();

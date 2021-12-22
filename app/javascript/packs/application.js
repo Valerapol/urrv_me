@@ -18,7 +18,7 @@ require("stylesheets/application.scss")
 
 require("trix")
 require("@rails/actiontext")
-//require("js.cookie")
-//require("cookie_l")
 //require("jquery")
 //require("jquery-ui-dist/jquery-ui")
+window.Cookies = require("js-cookie")
+import '../packs/cookie_l'
