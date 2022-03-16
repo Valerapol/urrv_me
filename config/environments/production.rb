@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { :host => 'urrv-me.herokuapp.com', :protocol => 'https' }
+  config.action_mailer.default_url_options = { :host => 'urrv.me', :protocol => 'https' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -10,9 +10,9 @@ Rails.application.configure do
     :address => 'smtp.gmail.com',
     :port => '587',
     :authentication => :plain,
-    :user_name => 'urrv.me',
-    :password => 'bdiohmzznyhkhcya',
-    :domain => 'urrv-me.herokuapp.com',
+    :user_name => Rails.application.credentials.dig(:mailer, :user_name),
+    :password => Rails.application.credentials.dig(:mailer, :password),
+    :domain => 'urrv.me',
     :enable_starttls_auto => true
   }
   # Settings specified here will take precedence over those in config/application.rb.
