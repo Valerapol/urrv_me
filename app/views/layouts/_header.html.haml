@@ -2,7 +2,7 @@
   .container-fluid
     %a.navbar-brand
       = link_to home_path, class: 'navbar-brand' do
-        = image_tag 'logo.png', size: '50x50', alt: "logo", class: 'rounded'
+        = image_tag 'Rostov_logo_bright.png', size: '65x40', alt: "logo", class: 'rounded'
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -11,10 +11,10 @@
           = link_to airports_path, class: 'nav-link' do
             .fas.fa-paper-plane
             = t 'geography'
-        %li.nav-item
-          = link_to home_path, class: 'nav-link' do
-            = t 'pilot'
         - if current_user && current_user.has_role?(:admin)
+          %li.nav-item
+            = link_to home_path, class: 'nav-link' do
+              = t 'pilot'
           %li.nav-item.dropdown
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
               = t 'admin'

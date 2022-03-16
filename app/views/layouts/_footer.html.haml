@@ -15,9 +15,8 @@
       .col-md-4
         = link_to 'Privacy policy', privacy_policy_path
         .row
-        Terms and conditions
+        = link_to 'Terms and conditions', tos_path
       .col-md-4
-        About us
         = form_tag({}, {:method => :get}) do
           = select_tag 'set_locale',
             options_for_select(LANGUAGES, I18n.locale.to_s),

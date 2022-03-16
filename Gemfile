@@ -49,3 +49,4 @@ gem 'cookie_law'
 gem "rolify"
 gem "pundit"
 gem 'cookies_eu'
+gem "recaptcha"

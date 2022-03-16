@@ -17,6 +17,8 @@
           required: true,
           input_html: { autocomplete: "new-password" }
         %p
+        = recaptcha_tags
+        %p
       .form-actions
         = f.button :submit, t(".sign_up"), class: 'btn btn-success'
   .card-footer

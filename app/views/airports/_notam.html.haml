@@ -1,5 +1,5 @@
 %button.btn.btn-primary{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal", :type => "button"}
-  NOTAMS
+  NOTAM
 / Modal
 #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
   .modal-dialog.modal-dialog-scrollable.modal-xl
@@ -8,10 +8,6 @@
         %h5#exampleModalLabel.modal-title NOTAM #{@airport.icao}
         %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
       .modal-body
-        /- @url.each do |str|
-        /  .card
-        /    .card-body
-        /      = str
         - @notam_arr.each do |el|
           .card
             .card-body
