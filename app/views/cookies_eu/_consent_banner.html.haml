@@ -23,6 +23,9 @@
             %h5#staticBackdropLabel.modal-title Политика обработки персональных данных сайта urrv.me
             %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
           .modal-body
-            = render 'home/privacy_policy'
+            - if I18n.locale.to_s == 'ru'
+              = render 'home/privacy_policy_ru'
+            - else
+              = render 'home/privacy_policy_en'
           .modal-footer
             %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Закрыть
