@@ -22,7 +22,7 @@
 .row.row-cols-1.g-4
   .col-8
     .card
-      .card-body
+      .card-body.trix-content
         - if I18n.locale.to_s == 'en'
           = @airport.description_en
         - else
