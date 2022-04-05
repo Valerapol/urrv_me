@@ -1,0 +1,7 @@
+%h3 Новое приложение
+
+.card
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to "#{t('back')}", documents_path, class: 'btn btn-sm btn-primary'

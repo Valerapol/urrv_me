@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :documents
     resources :airports
     resources :users, only: [:index, :edit, :show, :update]
     root "home#index", as: 'home', via: :all

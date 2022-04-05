@@ -1,0 +1,44 @@
+%h3 Документация
+
+.card
+  .card-header
+    Федеральные авиационные правила
+  .card-body
+    - @documents.where(tipe: 0).each do |document|
+      = link_to document.aplication.url, target: '_blank' do
+        = document.title
+      %p
+      - if current_user && (current_user.has_role?(:admin) || current_user.has_role?(:staff) || current_user.has_role?(:instructor) || current_user.has_role?(:mentor))
+        = link_to 'Edit', edit_document_path(document)
+      - if current_user && current_user.has_role?(:admin)
+        = link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }
+%p
+.card
+  .card-header
+    Методические указания
+  .card-body
+    - @documents.where(tipe: 2).each do |document|
+      = link_to document.aplication.url, target: '_blank' do
+        = document.title
+      %p
+      - if current_user && (current_user.has_role?(:admin) || current_user.has_role?(:staff) || current_user.has_role?(:instructor) || current_user.has_role?(:mentor))
+        = link_to 'Edit', edit_document_path(document)
+      - if current_user && current_user.has_role?(:admin)
+        = link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }
+%p
+.card
+  .card-header
+    Инструкции
+  .card-body
+    - @documents.where(tipe: 1).each do |document|
+      = link_to document.aplication.url, target: '_blank' do
+        = document.title
+      %p
+      - if current_user && (current_user.has_role?(:admin) || current_user.has_role?(:staff) || current_user.has_role?(:instructor) || current_user.has_role?(:mentor))
+        = link_to 'Edit', edit_document_path(document)
+      - if current_user && current_user.has_role?(:admin)
+        = link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+- if current_user && (current_user.has_role?(:admin) || current_user.has_role?(:staff) || current_user.has_role?(:instructor) || current_user.has_role?(:mentor))
+  = link_to 'New Document', new_document_path

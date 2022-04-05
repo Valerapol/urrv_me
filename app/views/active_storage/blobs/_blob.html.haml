@@ -1,5 +1,15 @@
 %figure{:class => "attachment attachment--#{blob.representable? ? "preview" : "file"} attachment--#{blob.filename.extension}"}
-  - if blob.representable?
+  - if blob.video?
+    %video{:controls => "false", :width => "100%"}
+      %source{:src => rails_blob_url(blob), :type => "#{blob.content_type}" }
+  - elsif blob.audio?
+    %audio{:controls => "true", :preload => "metadata", :width => "100%"}
+      %source{:src => rails_blob_url(blob), :type => "#{blob.content_type}" }
+  - elsif blob.content_type == 'application/pdf'
+    %embed{:src => rails_blob_url(blob), :width => "800", :height => "500", :type => "application/pdf" }
+  - elsif blob.content_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    %iframe{:frameborder => "0", :height => "500px", :src => "https://view.officeapps.live.com/op/embed.aspx?src=#{rails_blob_url(blob)}", :width => "100%"}
+  - elsif blob.representable?
     = image_tag blob.representation(resize_to_limit: local_assigns[:in_gallery] ? [ 800, 600 ] : [ 1024, 768 ])
   %figcaption.attachment__caption
     - if caption = blob.try(:caption)
@@ -7,3 +17,6 @@
     - else
       %span.attachment__name= blob.filename
       %span.attachment__size= number_to_human_size blob.byte_size
+    %span ·
+    = link_to rails_blob_path(blob, disposition: "attachment") do
+      .fa.fa-download

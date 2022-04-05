@@ -11,10 +11,15 @@
           = link_to airports_path, class: 'nav-link' do
             .fas.fa-paper-plane
             = t 'geography'
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            = t 'pilot'
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            %li
+              %a.dropdown-item
+                = link_to documents_path, class: 'nav-link' do
+                  = t 'documents'
         - if current_user && current_user.has_role?(:admin)
-          %li.nav-item
-            = link_to home_path, class: 'nav-link' do
-              = t 'pilot'
           %li.nav-item.dropdown
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
               = t 'admin'

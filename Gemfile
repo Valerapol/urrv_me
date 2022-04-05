@@ -50,3 +50,6 @@ gem "rolify"
 gem "pundit"
 gem 'cookies_eu'
 gem "recaptcha"
+gem 'carrierwave', '~> 2.0'
+gem 'carrierwave-i18n'
+gem 'file_validators'
