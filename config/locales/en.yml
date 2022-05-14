@@ -37,6 +37,10 @@ en:
   admin: Admin panel
   back: Back
   close: Close
+  cookies_eu:
+    cookies_text: "By agreeing to use this site, you accept our Personal Data Processing Policy and also agree to the use of cookies."
+    learn_more: "Learn more"
+    ok: "I agree"
   current_sign_in_at: Current sign in at
   current_sign_in_ip: Current sign in ip
   devise:

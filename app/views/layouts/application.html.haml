@@ -15,13 +15,15 @@
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render 'layouts/header'
-    = render 'layouts/messages'
-    .container
+    - if cookies && cookies['cookie_eu_consented'] != 'true'
+      = render 'cookies_eu/consent_banner', link: 'privacy_policy'
+    - else
+      = render 'layouts/header'
+      = render 'layouts/messages'
+      .container
+        %p
+        = yield
+      %br
       %p
-      = yield
-    %br
-    %p
-    %br
+      %br
     = render 'layouts/footer'
-    = render 'cookies_eu/consent_banner', link: 'privacy_policy'

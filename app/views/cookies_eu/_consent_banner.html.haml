@@ -1,32 +1,51 @@
-- if cookies && cookies['cookie_eu_consented'] != 'true'
-  .js-cookies-eu
-    .parent{:align => "center"}
-      .card.w-75
-        .card-footer
-          .cookies-eu
-            /- if I18n.exists?('cookies_eu.direction', I18n.locale) && I18n.t(cookies_eu.direction) == rtl
-            /  = dir=rtl
-            %span.cookies-eu-content-holder
-              = t('cookies_eu.cookies_text')
-            %br
-            %span.cookies-eu-button-holder
-              %button.cookies-eu-ok.js-cookies-eu-ok.btn.btn-sm.btn-primary
-                = t('cookies_eu.ok')
-              - if defined?(link).present?
-                %button.btn.btn-sm.btn-success{"data-bs-target" => "#staticBackdrop", "data-bs-toggle" => "modal", :type => "button"}
-                  = t('cookies_eu.learn_more')
-            / Modal
-    #staticBackdrop.modal.fade{"aria-hidden" => "false", "aria-labelledby" => "staticBackdropLabel", "data-bs-backdrop" => "static", "data-bs-keyboard" => "true", :tabindex => "-1"}
-      .modal-dialog.modal-fullscreen.modal-dialog-scrollable
-        .modal-content
-          .modal-header
-            %h5#staticBackdropLabel.modal-title Политика обработки персональных данных сайта urrv.me
-            %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
-          .modal-body
+/- if cookies && cookies['cookie_eu_consented'] != 'true'
+.js-cookies-eu
+  .parent{:align => "center"}
+    .card.w-75
+      .card-footer
+        .cookies-eu
+          /- if I18n.exists?('cookies_eu.direction', I18n.locale) && I18n.t(cookies_eu.direction) == rtl
+          /  = dir=rtl
+          %span.cookies-eu-content-holder
             - if I18n.locale.to_s == 'ru'
-              = render 'home/privacy_policy_ru'
+              %h3 Предупреждение!
+              %p Приветствуем Вас на сайте некоммерческого сообщества любителей виртуального УВД, действующих в сети VATSIM!
+              %p Проект ориентирован только на сообщество энтузиастов авиации и УВД в сети интернет и предназначен для его нужд.
+              %p Наши сессии управления воздушным движением происходят в виртуальном пространстве с помощью компьютерных программ - симуляторов УВД.
+              %p Ресурс не является офицальным сайтом Госкорпорации по ОрВД и к ее деятельности не имеет никакого отношения.
+              %p Если по каким-то причинам Вы попали сюда случайно, пожалуйста, во избежание недоразумений покиньте наш сайт.
+              %p Информация с данного сайта ни в коем случае не может быть использована для реальных полетов или для осуществления УВД в реальной жизни.
+              %br
             - else
-              = render 'home/privacy_policy_en'
-          .modal-footer
-            %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"}
-              = t 'close'
+              %h3 Warning!
+              %p Welcome to the website of the non-profit community of fans of virtual ATC operating on the VATSIM network!
+              %p The project is focused only on the community of aviation enthusiasts and ATC on the Internet and is intended for its needs.
+              %p Our air traffic control sessions take place in virtual space with the help of computer simulators of ATC.
+              %p The resource is not the official website of the ATM State Corporation and has nothing to do with its activities.
+              %p If for some reason you got here by accident, please leave our site to avoid misunderstandings.
+              %p In no case can the information from this site be used for real flights or for the implementation of ATC in real life.
+              %br
+            = t('cookies_eu.cookies_text')
+          %br
+          %br
+          %span.cookies-eu-button-holder
+            %button.cookies-eu-ok.js-cookies-eu-ok.btn.btn-sm.btn-primary{ :onclick => "window.top.location.reload(true)" }
+              = t('cookies_eu.ok')
+            - if defined?(link).present?
+              %button.btn.btn-sm.btn-success{"data-bs-target" => "#staticBackdrop", "data-bs-toggle" => "modal", :type => "button"}
+                = t('cookies_eu.learn_more')
+          / Modal
+  #staticBackdrop.modal.fade{"aria-hidden" => "false", "aria-labelledby" => "staticBackdropLabel", "data-bs-backdrop" => "static", "data-bs-keyboard" => "true", :tabindex => "-1"}
+    .modal-dialog.modal-fullscreen.modal-dialog-scrollable
+      .modal-content
+        .modal-header
+          %h5#staticBackdropLabel.modal-title Политика обработки персональных данных сайта urrv.me
+          %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+        .modal-body
+          - if I18n.locale.to_s == 'ru'
+            = render 'home/privacy_policy_ru'
+          - else
+            = render 'home/privacy_policy_en'
+        .modal-footer
+          %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"}
+            = t 'close'

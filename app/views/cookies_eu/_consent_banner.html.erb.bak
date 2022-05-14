@@ -13,3 +13,22 @@
 <% else %>
   <% raise Exception.new "'cookies' is a reserved Rails class, please rename your method" %>
 <% end %>
+Приветствуем Вас на сайте некоммерческого сообщества любителей виртуального УВД, действующего в сети VATSIM!
+Проект ориентирован только на сообщество энтузиастов авиации и УВД в сети интернет и предназначен для его нужд.
+Наши сессии управления воздушным движением происходят в виртуальном пространстве с помощью компьютерных программ - симуляторов УВД.
+Ресурс не является офицальным сайтом Госкорпорации по ОрВД и к ее деятельности не имеет никакого отношения.
+Если по каким-то причинам Вы попали сюда случайно, пожалуйста, во избежание недоразумений покиньте наш сайт.
+Информация с данного сайта ни в коем случае не может быть использована для реальных полетов или для осуществления УВД в реальной жизни.
+
+Welcome to the site of noncommercial virtual airline "S7 Virtual" which operates on VATSIM Network!
+The project is dedicated only to the community of aviation enthusiasts and intended only for its needs.
+We perform our flying in the virtual space using computer based aviation simulators.
+This resource is not an oficial website of "S7 Airlines" and is not a commercial venture.
+If for any reasons you have got here casually, please, in order to prevent any misunderstanding proceed to the real "S7 Airlines" website via link
+
+Welcome to the website of the non-profit community of fans of virtual ATC operating on the VATSIM network!
+The project is focused only on the community of aviation enthusiasts and ATC on the Internet and is intended for its needs.
+Our air traffic control sessions take place in virtual space with the help of computer simulators of ATC.
+The resource is not the official website of the ATM State Corporation and has nothing to do with its activities.
+If for some reason you got here by accident, please leave our site to avoid misunderstandings.
+In no case can the information from this site be used for real flights or for the implementation of ATC in real life.
