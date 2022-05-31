@@ -39,6 +39,11 @@ body {
   background-position: center center;
   background-size: cover;
 }
+test {
+  background-image: asset-data-url('16.jpg');
+  background-size:cover;
+  min-height:699px;
+}
 
 //cookies_eu
 

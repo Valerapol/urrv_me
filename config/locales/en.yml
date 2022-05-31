@@ -152,6 +152,7 @@ en:
       unlocked: Your account has been unlocked successfully. Please sign in to continue.
   discord: 'Our Discord'
   documents: Documents
+  error_404: "Sorry! The page you are looking for can't be found!"
   errors:
     messages:
       already_confirmed: was already confirmed, please try signing in

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+  registrations: 'users/registrations'
   }
+
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     resources :documents
     resources :airports
