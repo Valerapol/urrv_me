@@ -133,8 +133,8 @@ GEM
     file_validators (3.0.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
-    font-awesome-sass (5.15.1)
-      sassc (>= 1.11)
+    font-awesome-sass (6.1.1)
+      sassc (~> 2.0)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
     globalid (0.5.2)
@@ -350,7 +350,7 @@ DEPENDENCIES
   devise
   devise-i18n
   file_validators
-  font-awesome-sass (~> 5.15.1)
+  font-awesome-sass (~> 6.1.1)
   friendly_id (~> 5.4.0)
   haml-rails (~> 2.0)
   http

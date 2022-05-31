@@ -7,18 +7,96 @@
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(airports_path)}"}
-          = link_to airports_path, class: 'nav-link' do
-            .fas.fa-paper-plane
-            = t 'geography'
+        /About
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
-            = t 'pilot'
+            = t 'header.about'
           %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
             %li
-              %a.dropdown-item
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  = t 'header.news'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  = t 'header.media'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  = t 'header.team'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  = t 'header.structure'
+        /Pilots
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            = t 'header.pilots'
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            %li
+              .dropdown-item
+                = link_to airports_path, class: 'nav-link' do
+                  .fas.fa-map-location
+                  = t 'header.airports'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-clock
+                  = t 'header.booking'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-exclamation
+                  = t 'header.sop'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-comment-dots
+                  = t 'header.feegback'
+        /Controllers
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            = t 'header.controlers'
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-graduation-cap
+                  = t 'header.student'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-pen
+                  = t 'header.request'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-person-circle-question
+                  = t 'header.guest'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-list-check
+                  = t 'header.training'
+            %li
+              .dropdown-item
                 = link_to documents_path, class: 'nav-link' do
-                  = t 'documents'
+                  .fas.fa-book
+                  = t 'header.documents'
+            %li
+              .dropdown-item
+                = link_to documents_path, class: 'nav-link' do
+                  .fas.fa-file
+                  = t 'header.methodological'
+            %li
+              .dropdown-item
+                = link_to home_path, class: 'nav-link' do
+                  .fas.fa-map
+                  = t 'header.sector'
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(home_path)}"}
+          = link_to home_path, class: 'nav-link' do
+            .fas.fa-calendar-days
+            = t 'header.events'
         - if current_user && current_user.has_role?(:admin)
           %li.nav-item.dropdown
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -29,13 +107,9 @@
                   = link_to users_path, class: 'nav-link' do
                     = t 'users'
               %li
-                %a.dropdown-item{:href => "#"} Another action
-              %li
                 %hr.dropdown-divider/
               %li
                 %a.dropdown-item{:href => "#"} Something else here
-          %li.nav-item
-            %a.nav-link.disabled Disabled
       %form.d-flex
         .form-inline.my-2.my-lg-0
           = form_tag(airports_path, method: :get) do

@@ -163,7 +163,26 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
-  geography: 'Geography of CFPU'
+  header:
+    about: About as
+    news: News
+    media: Media
+    structure: ACC structure
+    team: Our team
+    airports: Airports
+    booking: ATC bookings
+    feegback: Feedback
+    pilots: Pilots
+    sop: SOP "Norht-South vertical separation"
+    controlers: Controllers
+    student: Student's personal account
+    request: Become a controller
+    guest: Become a guest controller
+    training: Training program
+    documents: Regulatory documents
+    methodological: Methodological recommendations
+    sector: Sector-file
+    events: Events calendar
   last_sign_in_at: Last sign in at
   last_sign_in_ip: Last sign in ip
   logo: 'Rostov-na-Donu CFPU VATSIM'

@@ -31,7 +31,7 @@ end
 
 gem "haml-rails", "~> 2.0"
 gem 'listen', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.15.1'
+gem 'font-awesome-sass', '~> 6.1.1'
 gem 'simple_form'
 gem "actionpack", ">= 6.1.4.1"
 gem "aws-sdk-s3", require: false #save images and files in production
