@@ -18,7 +18,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    if params[:data]
+      @event = Event.new(start_time: Date.parse(params[:data]), end_time: Date.parse(params[:data]))
+    else
+      @event = Event.new
+    end
   end
 
   def edit
@@ -64,6 +68,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :body, :title_en, :body_en, :start_time, :end_time)
+      params.require(:event).permit(:title, :body, :title_en, :body_en, :start_time, :end_time, :data)
     end
 end

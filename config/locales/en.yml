@@ -178,6 +178,7 @@ en:
     controlers: Controllers
     student: Student's personal account
     request: Become a controller
+    request_subject: Request guest access
     guest: Become a guest controller
     training: Training program
     documents: Regulatory documents

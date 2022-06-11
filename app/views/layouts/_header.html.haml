@@ -45,12 +45,12 @@
                   = t 'header.booking'
             %li
               .dropdown-item
-                = link_to home_path, class: 'nav-link' do
+                = link_to sop_path, class: 'nav-link' do
                   .fas.fa-exclamation
                   = t 'header.sop'
             %li
               .dropdown-item
-                = link_to home_path, class: 'nav-link' do
+                = link_to "https://discord.urrv.me", class: 'nav-link' do
                   .fas.fa-comment-dots
                   = t 'header.feegback'
         /Controllers
@@ -60,17 +60,17 @@
           %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
             %li
               .dropdown-item
-                = link_to home_path, class: 'nav-link' do
+                = link_to "https://training.urrv.me/?lang=#{I18n.locale.to_s}", class: 'nav-link' do
                   .fas.fa-graduation-cap
                   = t 'header.student'
             %li
               .dropdown-item
-                = link_to home_path, class: 'nav-link' do
+                = link_to "https://discord.urrv.me", class: 'nav-link' do
                   .fas.fa-pen
                   = t 'header.request'
             %li
               .dropdown-item
-                = link_to home_path, class: 'nav-link' do
+                = mail_to "chief@urrv.me", subject: "#{t 'header.request_subject'}", class: 'nav-link' do
                   .fas.fa-person-circle-question
                   = t 'header.guest'
             %li

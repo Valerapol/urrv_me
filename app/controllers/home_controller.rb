@@ -26,4 +26,13 @@ class HomeController < ApplicationController
     end
   end
 
+  def sop
+    if params[:set_locale]
+      redirect_to sop_url(locale: params[:set_locale])
+    end
+    if params[:icao]
+      redirect_to "/airports?icao=#{params[:icao]}"
+    end
+  end
+
 end

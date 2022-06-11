@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0.0'
 gem 'pg'
 gem "puma", ">= 5.5.1"
 gem 'sass-rails', '>= 6'
@@ -55,3 +55,5 @@ gem 'carrierwave-i18n'
 gem 'file_validators'
 gem 'oauth2', '~> 1.4.9'
 gem "simple_calendar", "~> 2.4"
+gem "sprockets-rails"
+gem 'validates_timeliness'

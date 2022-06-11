@@ -1,0 +1,29 @@
+.card
+  .card-header
+    .h2{:align => "center"}
+      SOP "North-South vertical separation"
+  .card-body
+    %p Dear friends! We remind you that in the Western part of the Rostov FIR there is a SOP "North-South vertical separation".
+    %p However, after December 3, 2020, along with the introduction of the New Airspace Structure, the structure of the airspace in which the above-mentioned special operating procedure is applied has also changed.
+    %p So. When flying in the north direction in the airspace in which the SOP is used, flights are carried out on even flight levels. Accordingly, in the South direction on odd flight levels.
+    %br
+    %p One-way routes in the north direction: A915 (UPADA-ODUKI-BEBID), G901 (AG-OTKEN; SM-KUTON).
+    %p One-way routes in the south direction: G534 (ARKOK-GISID), N166 (ARKOK-SUDIR; LENIR-PROZR), G247 (OGURA-KND), G900 (OBETI-KND).
+    %p Two-way routes:
+    %p A100 (ARNAD-KL), A712 (SB-DIBRO), A808 (MOR-AMEPU), A813 (KENEN-KL), 961 (KULED-SM), B820 (XT-LENIR), B949 (DV-SM), B950 (AG-SM), G128 (SUREM-SUDIR), G364 (TOKNO-ASTIB), G534 (TOROS-GISID), G900 (GIMKI-OBETI; SM-KUTON), G904 (FASAD-UNRID), G918 (KULOM-KULED), L91 (KL-KANON), N166 (LENIR-SUDIR), R720 (MOR-ROS), W316 (ANAKA-AMEPU), W323 (NOPSA-KA), W343 (RUGAN-SM), W70 (KND-AMEPU).
+    %br
+    %p The application boundary of the SOP and the routes included in it are shown in the picture below (clicking on the image enlarges the image).
+    %p{:align => "center", "data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal"}
+      = image_tag "NEW-SOP1.png", :class => "style_image"
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-scrollable.modal-xl
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title SOP "North-South vertical separation"
+        %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+      .modal-body
+        = image_tag "NEW-SOP1.png", :class => "style_image_full"
+        %p
+      .modal-footer
+        %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"}
+          = t 'сlose'

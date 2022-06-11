@@ -5,11 +5,11 @@
 
   .form-inputs
     = f.input :title, label: 'Заголовок'
-    = f.input :title_en, label: 'Заголовок на английском (если нужен)'
     = f.input :body, as: :rich_text_area, label: 'Подробное писание мероприятия'
+    = f.input :title_en, label: 'Заголовок на английском (если нужен)'
     = f.input :body_en, as: :rich_text_area, label: 'Подробное писание мероприятия на английском (если нужно)'
-    = f.input :start_time, as: :time, html5: true, default: :data, label: 'Время начала мероприятия'
-    = f.input :end_time, as: :datetime, html5: true, default: :data, label: 'Дата и время окончания мероприятия'
+    = f.input :start_time, as: :datetime, html5: true, label: 'Дата и время начала мероприятия'
+    = f.input :end_time, as: :datetime, html5: true, label: 'Дата и время окончания мероприятия'
   %br
   .form-actions
     = f.button :submit, class: 'btn btn-sm btn-success' do

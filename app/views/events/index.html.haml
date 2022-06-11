@@ -4,7 +4,11 @@
     = date.strftime("%d.%m.%Y")
   %br
   - events.each do |event|
-    = link_to event.title, event
+    - if I18n.locale.to_s == "ru"
+      = link_to event.title, event
+    - else
+      = link_to event.title_en, event
+
 
 
 %table

@@ -15,10 +15,11 @@ ActiveStorage.start()
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 require("stylesheets/application.scss")
-
+//= require turbolinks
+//= require cookies_eu
 require("trix")
 require("@rails/actiontext")
-//require("jquery")
+require("jquery")
 //require("jquery-ui-dist/jquery-ui")
 window.Cookies = require("js-cookie")
 import '../packs/cookie_l'

@@ -1,0 +1,29 @@
+.card
+  .card-header
+    .h2{:align => "center"}
+      СОП "Северо-южное эшелонирование"
+  .card-body
+    %p Дорогие друзья! Напоминаем, что в Западной части РПИ Ростов действует СОП "Северно-Южное Эшелонирование".
+    %p Однако, после 3 декабря 2020 года вместе с вводом НСВП изменилась и структура ВП, в котором применяется вышеуказанная специальная операционная процедура.
+    %p Итак. При полетах в северном направлении в ВП, в котором применяется СОП, полеты выполняются на четных эшелонах полета. Соответственно в Южном направлении на нечетных эшелонах полета.
+    %br
+    %p Односторонние трассы в северном направлении: A915 (UPADA-ODUKI-BEBID), G901 (AG-OTKEN; SM-KUTON).
+    %p Односторонние трассы в южном направлении: G534 (ARKOK-GISID), N166 (ARKOK-SUDIR; LENIR-PROZR), G247 (OGURA-KND), G900 (OBETI-KND).
+    %p Двухсторонние трассы:
+    %p A100 (ARNAD-KL), A712 (SB-DIBRO), A808 (MOR-AMEPU), A813 (KENEN-KL), 961 (KULED-SM), B820 (XT-LENIR), B949 (DV-SM), B950 (AG-SM), G128 (SUREM-SUDIR), G364 (TOKNO-ASTIB), G534 (TOROS-GISID), G900 (GIMKI-OBETI; SM-KUTON), G904 (FASAD-UNRID), G918 (KULOM-KULED), L91 (KL-KANON), N166 (LENIR-SUDIR), R720 (MOR-ROS), W316 (ANAKA-AMEPU), W323 (NOPSA-KA), W343 (RUGAN-SM), W70 (KND-AMEPU).
+    %br
+    %p Граница применения СОП и трассы, включенные в нее, указаны на рисунке ниже (клик по картинке увеличивает изображение).
+    %p{:align => "center", "data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal"}
+      = image_tag "NEW-SOP1.png", :class => "style_image"
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-scrollable.modal-xl
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title SOP "North-South vertical separation"
+        %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+      .modal-body
+        = image_tag "NEW-SOP1.png", :class => "style_image_full"
+        %p
+      .modal-footer
+        %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"}
+          = t 'сlose'

@@ -15,7 +15,7 @@
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    - if cookies && cookies['cookie_eu_consented'] != 'true'
+    - if cookies && cookies['cookie_eu_consented'].to_s != 'true'
       = render 'cookies_eu/consent_banner', link: 'privacy_policy'
     - else
       = render 'layouts/header'
@@ -23,7 +23,7 @@
       .container
         %p
         = yield
-      %br
-      %p
-      %br
+        %br
+        %p
+        %br
     = render 'layouts/footer'

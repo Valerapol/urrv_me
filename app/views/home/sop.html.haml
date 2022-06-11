@@ -1,0 +1,8 @@
+- content_for :title do
+  URRV
+  \|
+  Special Operating Procedure
+- if I18n.locale.to_s == 'ru'
+  = render 'sop_ru'
+- else
+  = render 'sop_en'
