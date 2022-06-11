@@ -1,0 +1,10 @@
+.card
+  .card-header
+    %h2 Новое событие
+  .card-body
+    - if params[:param]
+      = render 'form2'
+    - else
+      = render 'form'
+  .card-footer
+    = link_to 'Back', events_path, class: 'btn btn-sm btn-primary'

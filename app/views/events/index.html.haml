@@ -1,0 +1,33 @@
+%h1 Listing events
+= month_calendar events: @events do |date, events|
+  = link_to new_event_path(:data => date), class: "calendar-link" do
+    = date.strftime("%d.%m.%Y")
+  %br
+  - events.each do |event|
+    = link_to event.title, event
+
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Body
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      - if !event.start_time.present?
+        %tr
+          %td= event.title
+          %td= event.body
+          %td= event.start_time
+          %td= event.end_time
+          %td= link_to 'Show', event
+          %td= link_to 'Edit', edit_event_path(event)
+          %td= link_to 'Destroy', event, method: :delete, data: { confirm: "#{t 'confirm'}" }
+
+%br
+
+= link_to 'Добавить объявление', new_event_path(:param => "meeting")

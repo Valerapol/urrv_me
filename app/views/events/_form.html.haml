@@ -1,0 +1,16 @@
+-# frozen_string_literal: true
+= simple_form_for(@event) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :title, label: 'Заголовок'
+    = f.input :title_en, label: 'Заголовок на английском (если нужен)'
+    = f.input :body, as: :rich_text_area, label: 'Подробное писание мероприятия'
+    = f.input :body_en, as: :rich_text_area, label: 'Подробное писание мероприятия на английском (если нужно)'
+    = f.input :start_time, as: :time, html5: true, default: :data, label: 'Время начала мероприятия'
+    = f.input :end_time, as: :datetime, html5: true, default: :data, label: 'Дата и время окончания мероприятия'
+  %br
+  .form-actions
+    = f.button :submit, class: 'btn btn-sm btn-success' do
+      Создать событие

@@ -54,3 +54,4 @@ gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-i18n'
 gem 'file_validators'
 gem 'oauth2', '~> 1.4.9'
+gem "simple_calendar", "~> 2.4"

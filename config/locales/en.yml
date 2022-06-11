@@ -41,6 +41,7 @@ en:
     cookies_text: "By agreeing to use this site, you accept our Personal Data Processing Policy and also agree to the use of cookies."
     learn_more: "Learn more"
     ok: "I agree"
+  confirm: Are you sure?
   current_sign_in_at: Current sign in at
   current_sign_in_ip: Current sign in ip
   devise:
@@ -277,6 +278,10 @@ en:
       not_null: "is not null"
   role: Must have at least one role
   sign_in_count: Sign in count
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    week: Week
   simple_form:
     labels:
       user:

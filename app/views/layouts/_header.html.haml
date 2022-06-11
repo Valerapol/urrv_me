@@ -93,8 +93,8 @@
                 = link_to home_path, class: 'nav-link' do
                   .fas.fa-map
                   = t 'header.sector'
-        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(home_path)}"}
-          = link_to home_path, class: 'nav-link' do
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(events_path)}"}
+          = link_to events_path, class: 'nav-link' do
             .fas.fa-calendar-days
             = t 'header.events'
         - if current_user && current_user.has_role?(:admin)

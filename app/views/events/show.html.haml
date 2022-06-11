@@ -1,0 +1,22 @@
+%p
+  %b Title:
+  = @event.title
+%p
+  %b Title_en:
+  = @event.title_en
+%p
+  %b Body:
+  = @event.body
+%p
+  %b Body_en:
+  = @event.body_en
+%p
+  %b Start time:
+  = @event.start_time
+%p
+  %b End time:
+  = @event.end_time
+
+= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-primary'
+= link_to 'Back', events_path, class: 'btn btn-sm btn-warning'
+= link_to 'Destroy', @event, method: :delete, data: { confirm: "#{t 'confirm'}" }, class: 'btn btn-sm btn-danger'

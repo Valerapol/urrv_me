@@ -1,5 +1,6 @@
 //@import "font-awesome-sprockets";
 @import "font-awesome";
+@import "simple_calendar";
 
 .form-control.is-invalid{ background-image: none; }
 .form-control.is-valid{ background-image: none; }
@@ -117,4 +118,10 @@ test {
   align-content: center;
   justify-content: center;
   overflow: auto;
+}
+
+//Simple calendar
+.calendar-link {
+  color: black;
+  font-size: 10pt;
 }

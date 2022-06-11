@@ -1,0 +1,8 @@
+.card
+  .card-header
+    %h2 Редактирование события
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to 'Show', @event, class: 'btn btn-sm btn-primary'
+    = link_to 'Back', events_path, class: 'btn btn-sm btn-warning'
